@@ -22,29 +22,32 @@
 
             function gameRound() {
                 if (cpChoiceString == "rock" && userChoice == "rock") { //ties here
-                    console.log("Its a tie!");
+                    return("Its a tie!");
                 } else if (cpChoiceString == "paper" && userChoice == "paper"){
-                    console.log("Its a tie!");
+                    return("Its a tie!");
                 } else if (cpChoiceString == "scissors" && userChoice == "scissors"){
-                    console.log("Its a tie!");
+                    return("Its a tie!");
 
                 } else if (cpChoiceString == "rock" && userChoice == "paper"){ // rock&paper evaluations
-                    console.log("Paper wins, player scores!");
+                    return("Paper wins, you score!");
                 } else if (cpChoiceString == "paper" && userChoice == "rock"){
-                    console.log("Paper wins, computer scores!");
+                    return("Paper wins, computer scores!");
 
                } else if (cpChoiceString == "rock" && userChoice == "scissors"){ //rock& scissors evaluations
-                    console.log("Rock wins, computer scores!");
+                    return("Rock wins, computer scores!");
                 } else if (cpChoiceString == "scissors" && userChoice == "rock"){
-                    console.log("Rock wins, player scores!");
+                    return("Rock wins, you score!");
 
                 } else if (cpChoiceString == "paper" && userChoice == "scissors"){ //paper&scissors evaluations
-                    console.log("Scissors wins, player scores!");
+                    return("Scissors wins, you score!");
                 } else if (cpChoiceString == "scissors" && userChoice == "paper"){
-                    console.log("Scissors wins, computer scores!");
+                    return("Scissors wins, computer scores!");
+                } else {
+                    return("Hey, you did a typo. My code is NOT WRONG!");
                 }
             }
-            gameRound();
+            let winner = gameRound();
+            console.log(winner);
 
 
 
