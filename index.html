@@ -7,19 +7,48 @@
     <body>
         <script>
 
-            function getComputerChoice(){
-                const rps = ["Rock", "Paper", "Scissors"];
+            function getComputerChoice(cpChoiceString){
+                const rps = ["rock", "paper", "scissors"];
                 const randomElement = rps[Math.floor((Math.random() * rps.length))];
-                console.log(randomElement);
+                return randomElement;
                     
             }
-           getComputerChoice();
+            let cpChoiceString = getComputerChoice();
+            console.log("Computer choose: " + cpChoiceString );
+
+          
+            const userChoice = prompt("Choose your weapon: Rock, Paper or Scissors").toLowerCase();
+            console.log("You choose: " + userChoice);
+
+            function gameRound() {
+                if (cpChoiceString == "rock" && userChoice == "rock") { //ties here
+                    console.log("Its a tie!");
+                } else if (cpChoiceString == "paper" && userChoice == "paper"){
+                    console.log("Its a tie!");
+                } else if (cpChoiceString == "scissors" && userChoice == "scissors"){
+                    console.log("Its a tie!");
+
+                } else if (cpChoiceString == "rock" && userChoice == "paper"){ // rock&paper evaluations
+                    console.log("Paper wins, player scores!");
+                } else if (cpChoiceString == "paper" && userChoice == "rock"){
+                    console.log("Paper wins, computer scores!");
+
+               } else if (cpChoiceString == "rock" && userChoice == "scissors"){ //rock& scissors evaluations
+                    console.log("Rock wins, computer scores!");
+                } else if (cpChoiceString == "scissors" && userChoice == "rock"){
+                    console.log("Rock wins, player scores!");
+
+                } else if (cpChoiceString == "paper" && userChoice == "scissors"){ //paper&scissors evaluations
+                    console.log("Scissors wins, player scores!");
+                } else if (cpChoiceString == "scissors" && userChoice == "paper"){
+                    console.log("Scissors wins, computer scores!");
+                }
+            }
+            gameRound();
+
+
 
         </script>
     </body>
 </html>
 
-<!-- pseudocode -->
-<!-- create function getComputerChoice -->
-<!-- inside function make array of rock paper scissors-->
-<!-- make function return one random element out of array -->
