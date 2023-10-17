@@ -1,78 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-    <header>
+    <head>
         <meta charset="utf-8">
         <title>Rock Paper Scissors</title>
-    </header>
+    </head>
     <body>
         <script>
-            
-            
-            // get computer to choose rock paper or scissors
-            function getComputerChoice(cpChoiceString){
-                const rps = ["rock", "paper", "scissors"];
-                const randomElement = rps[Math.floor((Math.random() * rps.length))];
-                return randomElement;
-                    
-            }
-            // store whatever compute choose into a variable
-            let cpChoiceString = getComputerChoice();
-            console.log("Computer choose: " + cpChoiceString );
 
+            // variables for counter
+            let counterPlayer = 0;
+            let counterComputer = 0;
+            
+            function gameRound() {
+            // get computer to choose rock paper or scissors           
+            const rps = ["rock", "paper", "scissors"];
+            const randomElement = rps[Math.floor((Math.random() * rps.length))];
+            // return randomElement; 
+            console.log("Computer choose: " + randomElement);
+          
             //promp player to enter rock paper or scissors and store into a variable   
             const userChoice = prompt("Choose your weapon: Rock, Paper or Scissors").toLowerCase();
             console.log("You choose: " + userChoice);
             
-            // rules for RPC
-            function gameRound() {
-                if (cpChoiceString == "rock" && userChoice == "rock") { //ties here
+            // rules for RPC           
+                if (randomElement == "rock" && userChoice == "rock") { //ties here
                     return("Its a tie!");
-                } else if (cpChoiceString == "paper" && userChoice == "paper"){
+                } else if (randomElement == "paper" && userChoice == "paper"){
                     return("Its a tie!");
-                } else if (cpChoiceString == "scissors" && userChoice == "scissors"){
+                } else if (randomElement == "scissors" && userChoice == "scissors"){
                     return("Its a tie!");
 
-                } else if (cpChoiceString == "rock" && userChoice == "paper"){ // rock&paper evaluations
+                } else if (randomElement == "rock" && userChoice == "paper"){ // rock&paper evaluations
                     return("Paper wins, you score!");
-                } else if (cpChoiceString == "paper" && userChoice == "rock"){
+                } else if (randomElement == "paper" && userChoice == "rock"){
                     return("Paper wins, computer scores!");
 
-               } else if (cpChoiceString == "rock" && userChoice == "scissors"){ //rock& scissors evaluations
+               } else if (randomElement == "rock" && userChoice == "scissors"){ //rock& scissors evaluations
                     return("Rock wins, computer scores!");
-                } else if (cpChoiceString == "scissors" && userChoice == "rock"){
+                } else if (randomElement == "scissors" && userChoice == "rock"){
                     return("Rock wins, you score!");
 
-                } else if (cpChoiceString == "paper" && userChoice == "scissors"){ //paper&scissors evaluations
+                } else if (randomElement == "paper" && userChoice == "scissors"){ //paper&scissors evaluations
                     return("Scissors win, you score!");
-                } else if (cpChoiceString == "scissors" && userChoice == "paper"){
+                } else if (randomElement == "scissors" && userChoice == "paper"){
                     return("Scissors win, computer scores!");
                 } else {
                     return("Hey, you did a typo. My code is NOT WRONG!");
                 }
+                
             }
+            
+            //while loop to make the game run until someone reaches five points
+            while (counterComputer < 5 && counterPlayer < 5){             
         
             // get a winner of a round
             let winner = gameRound();
             console.log(winner);
             
-            // variables for choosing if computer won or if the player did
+            // variables for choosing if computer won or if the player did 
             let winPhrase = "you";
             let tiePhrase = "tie";
 
-            // variables to check if the round was not a tie
+            // variables to check if the round was not a tie, returns true or false
             let notATie = winner.includes(tiePhrase);
-            console.log(notATie);
+            // console.log(notATie);
 
-            //variables to check if the player won or not
+            //variables to check if the player won or not, returns true or false
             let findIfWin = winner.includes(winPhrase);
-            console.log(findIfWin);
+            // console.log(findIfWin);
 
-            // variables for counter
-            let counterPlayer = 0;
-            let counterComputer = 0;
+            
 
             // loop for counters, if round was not a tie and player won, increase player counter
-            // if round was not a tier and player lost, increase computer counter by one
+            // if round was not a tie and player lost, increase computer counter by one
             if (notATie == false && findIfWin == true) {
                 counterPlayer++;
                 console.log("You scored: " + counterPlayer +" points");
@@ -81,23 +81,15 @@
                 console.log("Computer scored: " + counterComputer +" points")
             }
 
-            while (counterComputer < 5 || counterPlayer < 5){
-                gameRound();
-            }
-            
-            if (counterComputer = 5) {
+            } 
+
+           if (counterComputer === 5) {
                 console.log("Computer won the battle!");
-            } else if (counterPlayer = 5) {
-                console.log("You wont the battle!");
+            } else if (counterPlayer === 5) {
+                console.log("You won the battle!");
             }
 
-            
-
-        
-
-            
-
-
+           
         </script>
     </body>
 </html>
