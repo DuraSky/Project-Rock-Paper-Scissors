@@ -6,20 +6,24 @@
     </header>
     <body>
         <script>
-
+            
+            
+            // get computer to choose rock paper or scissors
             function getComputerChoice(cpChoiceString){
                 const rps = ["rock", "paper", "scissors"];
                 const randomElement = rps[Math.floor((Math.random() * rps.length))];
                 return randomElement;
                     
             }
+            // store whatever compute choose into a variable
             let cpChoiceString = getComputerChoice();
             console.log("Computer choose: " + cpChoiceString );
 
-          
+            //promp player to enter rock paper or scissors and store into a variable   
             const userChoice = prompt("Choose your weapon: Rock, Paper or Scissors").toLowerCase();
             console.log("You choose: " + userChoice);
-
+            
+            // rules for RPC
             function gameRound() {
                 if (cpChoiceString == "rock" && userChoice == "rock") { //ties here
                     return("Its a tie!");
@@ -46,19 +50,29 @@
                     return("Hey, you did a typo. My code is NOT WRONG!");
                 }
             }
+        
+            // get a winner of a round
             let winner = gameRound();
             console.log(winner);
+            
+            // variables for choosing if computer won or if the player did
             let winPhrase = "you";
             let tiePhrase = "tie";
 
+            // variables to check if the round was not a tie
             let notATie = winner.includes(tiePhrase);
             console.log(notATie);
 
+            //variables to check if the player won or not
             let findIfWin = winner.includes(winPhrase);
             console.log(findIfWin);
 
+            // variables for counter
             let counterPlayer = 0;
             let counterComputer = 0;
+
+            // loop for counters, if round was not a tie and player won, increase player counter
+            // if round was not a tier and player lost, increase computer counter by one
             if (notATie == false && findIfWin == true) {
                 counterPlayer++;
                 console.log("You scored: " + counterPlayer +" points");
@@ -66,7 +80,17 @@
                 counterComputer++;
                 console.log("Computer scored: " + counterComputer +" points")
             }
+
+            while (counterComputer < 5 || counterPlayer < 5){
+                gameRound();
+            }
             
+            if (counterComputer = 5) {
+                console.log("Computer won the battle!");
+            } else if (counterPlayer = 5) {
+                console.log("You wont the battle!");
+            }
+
             
 
         
