@@ -39,16 +39,39 @@
                     return("Rock wins, you score!");
 
                 } else if (cpChoiceString == "paper" && userChoice == "scissors"){ //paper&scissors evaluations
-                    return("Scissors wins, you score!");
+                    return("Scissors win, you score!");
                 } else if (cpChoiceString == "scissors" && userChoice == "paper"){
-                    return("Scissors wins, computer scores!");
+                    return("Scissors win, computer scores!");
                 } else {
                     return("Hey, you did a typo. My code is NOT WRONG!");
                 }
             }
             let winner = gameRound();
             console.log(winner);
+            let winPhrase = "you";
+            let tiePhrase = "tie";
 
+            let notATie = winner.includes(tiePhrase);
+            console.log(notATie);
+
+            let findIfWin = winner.includes(winPhrase);
+            console.log(findIfWin);
+
+            let counterPlayer = 0;
+            let counterComputer = 0;
+            if (notATie == false && findIfWin == true) {
+                counterPlayer++;
+                console.log("You scored: " + counterPlayer +" points");
+            } else if (notATie == false && findIfWin == false) {
+                counterComputer++;
+                console.log("Computer scored: " + counterComputer +" points")
+            }
+            
+            
+
+        
+
+            
 
 
         </script>
