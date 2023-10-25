@@ -1,16 +1,42 @@
 body{
-    background-color: lightcoral;
+    background-color: rgb(55, 59, 63);
+    font-family:'Courier New', Courier, monospace;
+    
 }
 
 #game{
     display:flex;
     flex-direction: column;
+    background-color: rgb(110, 122, 138);
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
 }
 
 #buttons{
     display:flex;
     gap: 10px;
     justify-content: center;
+}
+
+#roundResult{
+    font-weight: bold;
+    color: white;
+}
+
+button {
+    background-color:rgb(107, 179, 202);
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+    font-family:'Courier New', Courier, monospace;
+  }
+
+button:hover{
+    background-color: rgb(30, 104, 129);
 }
 
 #text{
